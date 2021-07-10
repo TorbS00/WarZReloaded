@@ -1,12 +1,14 @@
 package com.github.beastyboo.foundation;
 
 import com.github.beastyboo.foundation.core.CollectionData;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoDatabase;
 
 public interface MongoAccess {
 
-    String ConnectionURI();
+    MongoClient client();
 
-    String database();
+    MongoDatabase database();
 
     <E extends Enum<E> & CollectionData> E collection();
 }
