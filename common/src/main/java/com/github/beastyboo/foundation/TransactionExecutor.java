@@ -2,7 +2,7 @@ package com.github.beastyboo.foundation;
 
 import java.util.concurrent.CompletableFuture;
 
-public interface DataCenter {
+public interface TransactionExecutor {
 
     @FunctionalInterface
     interface TransactionRunner {
@@ -32,6 +32,4 @@ public interface DataCenter {
      * @return a future implementation (CompletableFuture) once the transaction is complete, yielding the transaction result
      */
     <R> CompletableFuture<R> transaction(TransactionActor<R> actor);
-
-
 }
