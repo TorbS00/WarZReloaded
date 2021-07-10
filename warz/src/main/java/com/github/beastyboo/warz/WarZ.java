@@ -20,7 +20,7 @@ public class WarZ implements WarZAPI {
     }
 
     void close() {
-        //Transa
+
     }
 
     public JavaPlugin getPlugin() {

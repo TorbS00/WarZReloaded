@@ -1,5 +1,7 @@
 package com.github.beastyboo.warz.zone;
 
+import com.github.beastyboo.foundation.Transaction;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,6 +36,25 @@ public class Zone {
         return Set.copyOf(zoneLootTable);
     }
 
-    //public boolean addLootTable()
+    public boolean addLootTableItem(Transaction transaction, LootTableItem lootTableItem) {
+        return true;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Zone zone = (Zone) o;
+        return zoneId == zone.zoneId;
+    }
+
+    @Override
+    public int hashCode() {
+        return zoneId;
+    }
+
+    /*
+    TODO: Override .toString when fields complete.
+     */
 
 }
