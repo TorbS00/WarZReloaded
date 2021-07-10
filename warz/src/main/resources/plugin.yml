@@ -1,0 +1,3 @@
+name: WarZ
+version: ${project.version}
+main: com.github.beastyboo.warz.WarZPlugin

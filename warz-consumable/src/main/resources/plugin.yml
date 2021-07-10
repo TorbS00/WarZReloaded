@@ -1,0 +1,3 @@
+name: WarZ-Consumable
+version: ${project.version}
+main: com.github.beastyboo.consumable.ConsumablePlugin
