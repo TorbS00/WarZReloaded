@@ -1,7 +1,7 @@
 package com.github.beastyboo.foundation;
 
-import com.github.beastyboo.foundation.core.AccessData;
-import com.github.beastyboo.foundation.core.CollectionData;
+import com.github.beastyboo.foundation.registry.AccessData;
+import com.github.beastyboo.foundation.registry.CollectionData;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 

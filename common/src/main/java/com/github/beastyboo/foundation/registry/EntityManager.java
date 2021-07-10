@@ -1,4 +1,4 @@
-package com.github.beastyboo.foundation.core;
+package com.github.beastyboo.foundation.registry;
 
 public interface EntityManager extends AutoCloseable{
 

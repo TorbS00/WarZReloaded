@@ -1,7 +1,7 @@
 package com.github.beastyboo.warz.zone;
 
 import com.github.beastyboo.foundation.Transaction;
-import com.github.beastyboo.foundation.core.EntityManager;
+import com.github.beastyboo.foundation.registry.EntityManager;
 
 import java.util.HashMap;
 import java.util.Map;
