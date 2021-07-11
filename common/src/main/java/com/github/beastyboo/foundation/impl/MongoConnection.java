@@ -1,4 +1,4 @@
-package com.github.beastyboo.warz;
+package com.github.beastyboo.foundation.impl;
 
 import com.github.beastyboo.foundation.MongoAccess;
 import com.github.beastyboo.foundation.registry.CollectionData;
@@ -9,9 +9,9 @@ public class MongoConnection implements MongoAccess {
 
     private final MongoClient client;
     private final MongoDatabase database;
-    private final Collections collection;
+    private final Enum<? extends CollectionData> collection;
 
-    public MongoConnection(MongoClient client, MongoDatabase database, Collections collection) {
+    public MongoConnection(MongoClient client, MongoDatabase database, Enum<? extends CollectionData> collection) {
         this.client = client;
         this.database = database;
         this.collection = collection;
@@ -28,8 +28,9 @@ public class MongoConnection implements MongoAccess {
     }
 
     @Override
-    public <E extends Enum<E> & CollectionData> E collection() {
-        return (E) collection;
+    public Enum<? extends CollectionData> collection() {
+        return collection;
     }
+
 
 }

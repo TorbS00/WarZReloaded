@@ -9,6 +9,6 @@ public interface LocalAccess extends AccessData {
 
     File pluginDirectory();
 
-    <E extends Enum<E> & CollectionData> E collection();
+    Enum<? extends CollectionData> collection();
 
 }

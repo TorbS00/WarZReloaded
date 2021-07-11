@@ -1,4 +1,4 @@
-package com.github.beastyboo.warz;
+package com.github.beastyboo.foundation.impl;
 
 import com.github.beastyboo.foundation.LocalAccess;
 import com.github.beastyboo.foundation.registry.CollectionData;
@@ -8,9 +8,9 @@ import java.io.File;
 public class LocalConnection implements LocalAccess {
 
     private final File pluginDirectory;
-    private final Collections collection;
+    private final Enum<? extends CollectionData> collection;
 
-    public LocalConnection(File pluginDirectory, Collections collection) {
+    public LocalConnection(File pluginDirectory, Enum<? extends CollectionData> collection) {
         this.pluginDirectory = pluginDirectory;
         this.collection = collection;
     }
@@ -21,7 +21,8 @@ public class LocalConnection implements LocalAccess {
     }
 
     @Override
-    public <E extends Enum<E> & CollectionData> E collection() {
-        return (E) collection;
+    public Enum<? extends CollectionData> collection() {
+        return collection;
     }
+
 }

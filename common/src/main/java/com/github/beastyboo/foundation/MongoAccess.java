@@ -11,5 +11,5 @@ public interface MongoAccess extends AccessData {
 
     MongoDatabase database();
 
-    <E extends Enum<E> & CollectionData> E collection();
+    Enum<? extends CollectionData> collection();
 }
