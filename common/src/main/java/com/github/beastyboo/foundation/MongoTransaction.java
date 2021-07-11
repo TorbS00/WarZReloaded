@@ -3,7 +3,7 @@ package com.github.beastyboo.foundation;
 import com.github.beastyboo.foundation.exception.MongoExceptionHandler;
 import com.github.beastyboo.foundation.impl.MongoConnection;
 
-public class MongoTransaction implements Transaction, AutoCloseable {
+public class MongoTransaction implements Transaction{
 
     private final MongoConnection connection;
 
@@ -22,11 +22,6 @@ public class MongoTransaction implements Transaction, AutoCloseable {
         }
         throw new IllegalArgumentException(
                 "Transaction implementation MongoTransaction does not provide type of " + typeClass.getName());
-    }
-
-    @Override
-    public void close() throws Exception {
-        connection.session().close();
     }
 
     private MongoExceptionHandler handler() {
