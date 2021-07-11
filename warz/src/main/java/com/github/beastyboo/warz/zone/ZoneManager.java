@@ -3,12 +3,13 @@ package com.github.beastyboo.warz.zone;
 import com.github.beastyboo.foundation.Transaction;
 import com.github.beastyboo.foundation.registry.EntityManager;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ZoneManager implements EntityManager {
 
-    private final Map<Integer, Zone> zones = new HashMap<>();
+    //Cached Zone objects should stay alive (Unless we modify them), therefore Java's Map abstract data type is sufficient.
+    private final Map<Integer, Zone> zones = new ConcurrentHashMap<>();
 
     /**
      *
