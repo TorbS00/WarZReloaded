@@ -9,6 +9,8 @@ public interface LocalAccess extends AccessData {
 
     File pluginDirectory();
 
+    Runnable runnable();
+
     Enum<? extends CollectionData> collection();
 
 }
