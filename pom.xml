@@ -15,6 +15,7 @@
         <module>warz</module>
         <module>warz-consumable</module>
         <module>warz-guns</module>
+        <module>warz-team</module>
     </modules>
 
     <properties>

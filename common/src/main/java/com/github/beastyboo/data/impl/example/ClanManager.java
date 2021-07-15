@@ -26,15 +26,10 @@ public class ClanManager {
                 String json = gson.toJson(clan);
 
                 TransactionExecutor executor = new MongoTransactionExecutor(mongoTransaction, json);
-                executor.runTransaction();
+                executor.runTransaction().thenRun(() -> clans.put(clan.id, clan));
         }
-
-
 
         public void caller() {
                 createClan(connection.transactionFactory("dev", CollectionEnum.CLAN), 5, 5);
         }
-
-
-
 }
