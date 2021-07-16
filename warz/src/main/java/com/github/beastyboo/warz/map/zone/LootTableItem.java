@@ -1,4 +1,4 @@
-package com.github.beastyboo.warz.zone;
+package com.github.beastyboo.warz.map.zone;
 
 import org.bukkit.inventory.ItemStack;
 

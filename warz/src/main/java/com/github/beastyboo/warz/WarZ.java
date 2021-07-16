@@ -17,6 +17,20 @@ public class WarZ implements WarZAPI {
 
     void load() {
         logger.info("Starting WarZ");
+
+
+
+       /*
+        RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
+        World world = Bukkit.getWorld("world");
+        com.sk89q.worldedit.world.World worldEditWorld = BukkitAdapter.adapt(world);
+
+        RegionManager regions = container.get(worldEditWorld);
+
+        ProtectedCuboidRegion region = new ProtectedCuboidRegion();
+
+        regions.addRegion(region);
+        */
     }
 
     void close() {

@@ -26,7 +26,7 @@ public class MongoTransactionExecutor implements TransactionExecutor, AutoClosea
     public CompletableFuture<?> runTransaction() {
         return CompletableFuture.runAsync(() -> {
             TransactionBody txnBody = (TransactionBody<String>) () -> {
-                MongoCollection<Document> collection = transaction.getDatabase().getCollection(transaction.getCollection().toString());
+                MongoCollection<Document> collection = transaction.getDatabase().getCollection(transaction.getCollection().name().toLowerCase());
                 collection.insertOne(session, Document.parse(json));
                 return "Completed";
             };

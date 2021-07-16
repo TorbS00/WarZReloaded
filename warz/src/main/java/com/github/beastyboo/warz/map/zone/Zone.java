@@ -1,4 +1,4 @@
-package com.github.beastyboo.warz.zone;
+package com.github.beastyboo.warz.map.zone;
 
 import com.github.beastyboo.foundation.Transaction;
 
@@ -10,12 +10,12 @@ public class Zone {
     private final int zoneId;
     private final Set<LootTableItem> zoneLootTable;
 
-    Zone(int zoneId, Set<LootTableItem> zoneLootTable) {
+    public Zone(int zoneId, Set<LootTableItem> zoneLootTable) {
         this.zoneId = zoneId;
         this.zoneLootTable = zoneLootTable;
     }
 
-    Zone(int zoneId) {
+    public Zone(int zoneId) {
         this(zoneId, new HashSet<>());
     }
 
