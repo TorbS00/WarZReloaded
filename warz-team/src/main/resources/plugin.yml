@@ -1,0 +1,3 @@
+name: WarZ-Teams
+version: ${project.version}
+main: com.github.beastyboo.teams.TeamsDataPlugin

@@ -31,5 +31,4 @@ public final class WarZMap {
     public void registerTown(Town town) {
         towns.put(town.getName().toLowerCase(), town);
     }
-
 }

@@ -1,8 +1,10 @@
 package com.github.beastyboo.guns;
 
+import com.github.beastyboo.guns.api.GunsAPI;
+import com.github.beastyboo.guns.api.GunsPlugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class GunsPlugin extends JavaPlugin {
+public class GunsDataPlugin extends JavaPlugin implements GunsPlugin {
 
     private Guns core;
 
@@ -18,4 +20,8 @@ public class GunsPlugin extends JavaPlugin {
         core = null;
     }
 
+    @Override
+    public GunsAPI getAPI() {
+        return core;
+    }
 }

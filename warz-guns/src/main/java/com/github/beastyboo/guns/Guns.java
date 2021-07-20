@@ -1,10 +1,11 @@
 package com.github.beastyboo.guns;
 
+import com.github.beastyboo.guns.api.GunsAPI;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
 
-public class Guns {
+public class Guns implements GunsAPI {
 
     private final JavaPlugin plugin;
     private final Logger logger;
