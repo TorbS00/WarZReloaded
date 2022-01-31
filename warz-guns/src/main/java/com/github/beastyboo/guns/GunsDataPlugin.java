@@ -1,10 +1,10 @@
 package com.github.beastyboo.guns;
 
 import com.github.beastyboo.guns.api.GunsAPI;
-import com.github.beastyboo.guns.api.GunsPlugin;
+import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class GunsDataPlugin extends JavaPlugin implements GunsPlugin {
+public class GunsDataPlugin extends JavaPlugin {
 
     private Guns core;
 
@@ -12,6 +12,7 @@ public class GunsDataPlugin extends JavaPlugin implements GunsPlugin {
     public void onEnable() {
         core = new Guns(this);
         core.load();
+        getServer().getServicesManager().register(GunsAPI.class, core, this, ServicePriority.Low);
     }
 
     @Override
@@ -20,8 +21,4 @@ public class GunsDataPlugin extends JavaPlugin implements GunsPlugin {
         core = null;
     }
 
-    @Override
-    public GunsAPI getAPI() {
-        return core;
-    }
 }

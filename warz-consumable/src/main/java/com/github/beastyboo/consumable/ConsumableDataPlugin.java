@@ -1,10 +1,10 @@
 package com.github.beastyboo.consumable;
 
 import com.github.beastyboo.consumable.api.ConsumableAPI;
-import com.github.beastyboo.consumable.api.ConsumablePlugin;
+import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class ConsumableDataPlugin extends JavaPlugin implements ConsumablePlugin {
+public class ConsumableDataPlugin extends JavaPlugin {
 
     private Consumable core;
 
@@ -12,16 +12,12 @@ public class ConsumableDataPlugin extends JavaPlugin implements ConsumablePlugin
     public void onEnable() {
         core = new Consumable(this);
         core.load();
+        getServer().getServicesManager().register(ConsumableAPI.class, core, this, ServicePriority.Low);
     }
 
     @Override
     public void onDisable() {
         core.close();
         core = null;
-    }
-
-    @Override
-    public ConsumableAPI getAPI() {
-        return core;
     }
 }
