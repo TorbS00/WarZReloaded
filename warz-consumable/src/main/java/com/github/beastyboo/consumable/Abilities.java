@@ -6,4 +6,6 @@ public interface Abilities {
 
     <T> void healthIncrease(Predicate<T> increase);
 
+    <T> T getSupplier();
+
 }
